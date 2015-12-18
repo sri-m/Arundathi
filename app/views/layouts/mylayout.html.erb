@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myproject</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+		<h1>My Second Layout <%= ApplicationHelper.current_time %></h1>
+	</header>
+	<nav>
+		<!-- menu -->
+		<%= render :partial => "welcome/menu1" %>
+	</nav>
+	<section id="intro">
+		<!-- head-image -->
+		<%= render :partial => "welcome/mylayout1" %>
+	</section>
+	
+	<section id="content">
+		<%= yield %>
+				
+		</section>
+		
+<!-- footer -->
+<%= render :partial => "welcome/footer" %>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<%= semantic_form_for @registration do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name, :input_html => { :size => 25 } %>
+    <%= f.input :email, :input_html => { :size => 25 } %>
+    <%= f.input :gender,  :as => :radio, :collection => ["Male", "Female"]%>
+    <%= f.input :subject,  :as => :select, :collection => Contact.pluck(:name) %>
+    <%= f.input :address, :input_html => { :class => 'autogrow', :rows => 10, :cols => 20, :maxlength => 1000  } %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>
